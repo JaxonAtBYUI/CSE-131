@@ -192,6 +192,7 @@ def solver(board, playing_board):
     y = 0
     going_right = True
     solved = False
+    counter = 0
 
     while not solved:
         
@@ -210,7 +211,9 @@ def solver(board, playing_board):
             return
         if y > 8:
             print("The board has been solved.")
+            print(counter)
             return
+            
 
         if board[y][x] != 0:
             if going_right:
@@ -234,7 +237,8 @@ def solver(board, playing_board):
                     checking = False
 
                     x += 1
-
+        
+        counter += 1
 
 # This is all that I need to make the game work after all the function.
 board = open_file()
